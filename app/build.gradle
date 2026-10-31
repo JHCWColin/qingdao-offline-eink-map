@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.application'
+}
+
+def signingPropertiesFile = rootProject.file('.local/signing.properties')
+def signingProperties = new Properties()
+if (signingPropertiesFile.isFile()) {
+    signingPropertiesFile.withInputStream { signingProperties.load(it) }
+}
+if (gradle.startParameter.taskNames.any { it.toLowerCase().contains('release') } &&
+        !signingPropertiesFile.isFile()) {
+    throw new GradleException('Release signing credentials are missing: .local/signing.properties')
+}
+
+android {
+    namespace 'org.qingdao.offlinemap'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'org.qingdao.offlinemap'
+        minSdk 27
+        targetSdk 28
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        if (signingPropertiesFile.isFile()) {
+            release {
+                storeFile rootProject.file(signingProperties.getProperty('storeFile'))
+                storePassword signingProperties.getProperty('storePassword')
+                keyAlias signingProperties.getProperty('keyAlias')
+                keyPassword signingProperties.getProperty('keyPassword')
+                storeType 'PKCS12'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (signingPropertiesFile.isFile()) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    androidResources {
+        noCompress += ['map', 'db']
+    }
+}
+
+dependencies {
+    implementation files('libs/mapsforge-map-android-0.25.0-pingfang.jar')
+    implementation 'org.mapsforge:mapsforge-map-reader:0.25.0'
+    implementation 'com.caverock:androidsvg:1.4'
+}
+
+// Keep Java compilation in-process on Windows hosts where worker IPC is unavailable.
+tasks.withType(JavaCompile).configureEach {
+    options.fork = false
+}

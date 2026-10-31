@@ -1,0 +1,8 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>local</groupId><artifactId>preview</artifactId><version>1</version>
+  <dependencies>
+    <dependency><groupId>org.mapsforge</groupId><artifactId>mapsforge-map-awt</artifactId><version>0.25.0</version></dependency>
+    <dependency><groupId>org.mapsforge</groupId><artifactId>mapsforge-map-reader</artifactId><version>0.25.0</version></dependency>
+  </dependencies>
+</project>

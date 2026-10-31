@@ -1,0 +1,13 @@
+.gradle/
+**/build/
+local.properties
+tools/searchcheck/
+tools/appcheck/
+tools/patch_font_classes/
+/data/
+*.log
+device-*.png
+.local/
+/tools/osmosis-0.49.2/
+/tools/preview/lib/
+*.class
