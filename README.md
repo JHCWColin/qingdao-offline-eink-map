@@ -24,13 +24,15 @@
 $env:JAVA_HOME = 'D:/AndroidStudio.backup-20261031/jbr' # 本机 JDK 21；也可换成自己的 JDK 17/21
 $env:TEMP = 'D:/tmp'
 $env:TMP = 'D:/tmp'
-$env:JAVA_TOOL_OPTIONS = '-Djava.io.tmpdir=D:/tmp'
+$env:JAVA_TOOL_OPTIONS = '-Djava.io.tmpdir=D:/tmp -Dfile.encoding=COMPAT'
 .\gradlew.bat :app:assembleDebug
 adb install -r app\build\outputs\apk\debug\app-debug.apk
 adb shell am start -n org.qingdao.offlinemap/.MainActivity
 ```
 
-调试 APK 位于 `app/build/outputs/apk/debug/app-debug.apk`。应用最低 API 27，目标 API 28，首次启动会将打包的地图和数据库复制到应用私有目录，不需要外置存储权限。矢量瓦片采用 256 px、24 张内存缓存和 2 个渲染工作线程；墨水屏模式减少中间瓦片重绘。
+调试 APK 位于 `app/build/outputs/apk/debug/app-debug.apk`。应用最低 API 27，目标 API 28，首次启动会将打包的地图和数据库复制到应用私有目录，不需要外置存储权限。矢量瓦片采用 256 px 和 2 个渲染工作线程；V1.1.0 起内存缓存按实际帧缓冲工作集自动扩容至两倍（最低 24 张），避免可见瓦片反复淘汰造成破图和闪烁。地图使用软件 Canvas；墨水屏模式减少中间瓦片重绘。
+
+缓存回归测试：`./gradlew.bat :app:testDebugUnitTest`，涵盖原始 24 张缓存无法完成整帧、不同分辨率、旧任务完成和视口扩大场景。
 
 正式 APK 通过 `./gradlew.bat :app:assembleRelease` 生成于 `app/build/outputs/apk/release/app-release.apk`。签名材料存放在 Git 忽略的 `.local/qingdao-release.p12` 和 `.local/signing.properties`；请**私下备份两者**，否则后续无法使用相同签名更新。已安装的调试版与正式版签名不同，首次切换时须先卸载调试版。
 

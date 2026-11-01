@@ -26,7 +26,6 @@ import org.mapsforge.core.graphics.Canvas;
 import org.mapsforge.map.android.graphics.AndroidGraphicFactory;
 import org.mapsforge.map.android.graphics.AndroidPaint;
 import org.mapsforge.map.android.view.MapView;
-import org.mapsforge.map.layer.cache.InMemoryTileCache;
 import org.mapsforge.map.layer.Layer;
 import org.mapsforge.map.layer.renderer.TileRendererLayer;
 import org.mapsforge.map.reader.MapFile;
@@ -47,7 +46,7 @@ public final class MainActivity extends Activity {
     private TextView loading;
     private MapView mapView;
     private TextView pin;
-    private InMemoryTileCache tileCache;
+    private ViewportTileCache tileCache;
     private TileRendererLayer renderLayer;
     private boolean dataReady;
     private boolean destroyed;
@@ -264,6 +263,9 @@ public final class MainActivity extends Activity {
                     ? Parameters.ParentTilesRendering.OFF
                     : Parameters.ParentTilesRendering.SPEED;
             mapView = new MapView(this);
+            // Mapsforge reuses its double-buffer bitmaps after drawing; software Canvas avoids
+            // asynchronous hardware-texture uploads reading a bitmap while it is reused.
+            mapView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
             mapView.getModel().displayModel.setFixedTileSize(256);
             mapView.setBuiltInZoomControls(false);
             mapView.setZoomLevelMin((byte) 8);
@@ -273,7 +275,7 @@ public final class MainActivity extends Activity {
 
             MapFile file = new MapFile(new File(getFilesDir(), "qingdao.map"));
             mapView.getModel().mapViewPosition.setMapLimit(file.getMapFileInfo().boundingBox);
-            tileCache = new InMemoryTileCache(24);
+            tileCache = new ViewportTileCache();
             renderLayer = new TileRendererLayer(tileCache, file,
                     mapView.getModel().mapViewPosition, false, true, false, AndroidGraphicFactory.INSTANCE);
             renderLayer.setTextScale(settings.textScale());

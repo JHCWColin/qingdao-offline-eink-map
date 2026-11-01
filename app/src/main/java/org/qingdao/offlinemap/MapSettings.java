@@ -197,7 +197,7 @@ public final class MapSettings {
                         if (value != settings.enabled(entry.getKey())) changed = true;
                         edit.putBoolean(entry.getKey(), value);
                     }
-                    int size = sizes.getCheckedRadioButtonId() - 300;
+                    int size = sizes.indexOfChild(sizes.findViewById(sizes.getCheckedRadioButtonId()));
                     if (size < 0 || size > 2) size = 1;
                     if (size != settings.prefs.getInt(LABEL_SIZE, 1)) changed = true;
                     edit.putInt(LABEL_SIZE, size).apply();
