@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = 'QingdaoOfflineMap'
-include ':app'
+include ':app', ':colorful'

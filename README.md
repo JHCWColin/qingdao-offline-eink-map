@@ -1,4 +1,15 @@
-# 青岛离线地图（墨水屏版）
+# 青岛离线地图
+
+本仓库包含两个可同时安装的 Android 子项目：
+
+| 子项目 | 适用设备 | APK 包名 | 版本 |
+| --- | --- | --- | --- |
+| `app` | 墨水屏阅读器 | `org.qingdao.offlinemap` | 1.1.0 |
+| [`colorful`](colorful/README.md) | 普通手机和平板 | `org.qingdao.offlinemap.colorful` | 1.1.0 Colorful |
+
+彩色版源码、界面和主题保存在 `colorful/`，构建时复用原版离线数据、字体及渲染 JAR。两款应用的设置、缓存和私有数据目录独立。
+
+## 墨水屏版
 
 专为 758×1024、212 dpi、Android 8.1、armeabi-v7a、约 1 GB 内存的小米阅读器制作的**完全离线**地图。首次启动从 APK 解包本地矢量地图与检索数据库，此后地图、搜索和详情均不联网；应用清单不申请 `INTERNET` 权限。
 

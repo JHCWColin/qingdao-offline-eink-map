@@ -1,0 +1,1514 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rendertheme xmlns="http://mapsforge.org/renderTheme" version="5" map-background="#AAD7EC" map-background-outside="#AAD7EC" base-stroke-width="1" base-text-size="1">
+  <stylemenu id="qingdao" defaultvalue="default" defaultlang="zh">
+    <layer id="default" visible="true" enabled="true">
+      <name lang="zh" value="标准" />
+    </layer>
+    <layer id="road" visible="true" enabled="true">
+      <name lang="zh" value="道路线条" />
+      <cat id="road" />
+    </layer>
+    <layer id="roadname" visible="true" enabled="true">
+      <name lang="zh" value="路名" />
+      <cat id="roadname" />
+    </layer>
+    <layer id="path" visible="true" enabled="true">
+      <name lang="zh" value="步行小径" />
+      <cat id="path" />
+    </layer>
+    <layer id="pathname" visible="true" enabled="true">
+      <name lang="zh" value="小径名称" />
+      <cat id="pathname" />
+    </layer>
+    <layer id="rail" visible="true" enabled="true">
+      <name lang="zh" value="轨道线条" />
+      <cat id="rail" />
+    </layer>
+    <layer id="railname" visible="true" enabled="true">
+      <name lang="zh" value="轨道名称" />
+      <cat id="railname" />
+    </layer>
+    <layer id="transport" visible="true" enabled="true">
+      <name lang="zh" value="交通站点" />
+      <cat id="transport" />
+    </layer>
+    <layer id="transportname" visible="true" enabled="true">
+      <name lang="zh" value="交通站点名称" />
+      <cat id="transportname" />
+    </layer>
+    <layer id="placename" visible="true" enabled="true">
+      <name lang="zh" value="地名" />
+      <cat id="placename" />
+    </layer>
+    <layer id="poi" visible="true" enabled="true">
+      <name lang="zh" value="公共设施图标" />
+      <cat id="poi" />
+    </layer>
+    <layer id="poiname" visible="true" enabled="true">
+      <name lang="zh" value="公共设施名称" />
+      <cat id="poiname" />
+    </layer>
+    <layer id="shop" visible="true" enabled="true">
+      <name lang="zh" value="店铺图标" />
+      <cat id="shop" />
+    </layer>
+    <layer id="shopname" visible="true" enabled="true">
+      <name lang="zh" value="店名" />
+      <cat id="shopname" />
+    </layer>
+    <layer id="food" visible="true" enabled="true">
+      <name lang="zh" value="餐饮图标" />
+      <cat id="food" />
+    </layer>
+    <layer id="foodname" visible="true" enabled="true">
+      <name lang="zh" value="餐饮名称" />
+      <cat id="foodname" />
+    </layer>
+    <layer id="building" visible="true" enabled="true">
+      <name lang="zh" value="建筑轮廓" />
+      <cat id="building" />
+    </layer>
+    <layer id="addr" visible="true" enabled="true">
+      <name lang="zh" value="门牌号" />
+      <cat id="addr" />
+    </layer>
+    <layer id="water" visible="true" enabled="true">
+      <name lang="zh" value="水域" />
+      <cat id="water" />
+    </layer>
+    <layer id="watername" visible="true" enabled="true">
+      <name lang="zh" value="水域名称" />
+      <cat id="watername" />
+    </layer>
+    <layer id="landuse" visible="true" enabled="true">
+      <name lang="zh" value="土地利用" />
+      <cat id="landuse" />
+    </layer>
+    <layer id="boundary" visible="true" enabled="true">
+      <name lang="zh" value="行政边界" />
+      <cat id="boundary" />
+    </layer>
+  </stylemenu>
+  <rule e="way" k="natural" v="sea|issea">
+    <area fill="#AAD7EC" cat="water" />
+  </rule>
+  <rule e="way" k="natural" v="nosea">
+    <area fill="#FFFFFF" stroke="#A7B9AC" stroke-width="0.755" />
+  </rule>
+  <rule e="way" k="natural" v="coastline">
+    <line stroke="#76BCE0" stroke-width="0.906" scale="none" cat="water" />
+  </rule>
+  <rule e="way" k="landuse" v="residential|commercial|retail" zoom-min="11" closed="yes">
+    <area fill="#EBE9E3" cat="landuse" />
+  </rule>
+  <rule e="way" k="landuse" v="industrial|port|railway" zoom-min="12" closed="yes">
+    <area cat="landuse" fill="#E5DDEB" />
+  </rule>
+  <rule e="way" k="landuse" v="construction|quarry" zoom-min="13" closed="yes">
+    <area cat="landuse" fill="#ECDCC7" />
+  </rule>
+  <rule e="way" k="landuse" v="military" zoom-min="12" closed="yes">
+    <area stroke="#A7B9AC" stroke-width="0.755" cat="landuse" fill="#DDDDBF" />
+  </rule>
+  <rule e="way" k="landuse" v="cemetery" zoom-min="13" closed="yes">
+    <area cat="landuse" fill="#C8DBBF" />
+  </rule>
+  <rule e="way" k="amenity" v="grave_yard" zoom-min="13" closed="yes">
+    <area cat="landuse" fill="#C8DBBF" />
+  </rule>
+  <rule e="way" k="landuse" v="grass|meadow|recreation_ground|village_green|orchard" zoom-min="13" closed="yes">
+    <area cat="landuse" fill="#C8E6BF" />
+  </rule>
+  <rule e="way" k="natural" v="grassland|heath|scrub" zoom-min="12" closed="yes">
+    <area cat="landuse" fill="#C8E6BF" />
+  </rule>
+  <rule e="way" k="leisure" v="park|garden|golf_course" zoom-min="11" closed="yes">
+    <area cat="landuse" fill="#C8E6BF" />
+  </rule>
+  <rule e="way" k="natural" v="wood" zoom-min="10" closed="yes">
+    <area cat="landuse" fill="#ADD4A1" />
+  </rule>
+  <rule e="way" k="landuse" v="forest" zoom-min="10" closed="yes">
+    <area cat="landuse" fill="#ADD4A1" />
+  </rule>
+  <rule e="way" k="natural" v="beach|sand" zoom-min="12" closed="yes">
+    <area cat="landuse" fill="#F3E5B0" />
+  </rule>
+  <rule e="way" k="natural" v="bare_rock" zoom-min="13" closed="yes">
+    <area fill="#E6E6E6" cat="landuse" />
+  </rule>
+  <rule e="way" k="natural" v="wetland" zoom-min="12" closed="yes">
+    <area cat="landuse" fill="#BFDED1" />
+  </rule>
+  <rule e="way" k="amenity" v="school|university|college|kindergarten|hospital" zoom-min="13" closed="yes">
+    <area fill="#F3DFDF" stroke="#A7B9AC" stroke-width="0.755" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="tourism" v="zoo|theme_park" zoom-min="13" closed="yes">
+    <area stroke="#A7B9AC" stroke-width="0.906" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="leisure" v="stadium|sports_centre|pitch|track|playground|swimming_pool" zoom-min="14" closed="yes">
+    <area fill="#C7E4C4" stroke="#A7B9AC" stroke-width="0.755" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="aeroway" v="aerodrome" zoom-min="9" closed="yes">
+    <area fill="#DDE3EC" stroke="#A7B9AC" stroke-width="0.755" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="aeroway" v="apron" zoom-min="13" closed="yes">
+    <area fill="#DDE3EC" cat="landuse" />
+  </rule>
+  <rule e="way" k="amenity" v="parking" zoom-min="15" closed="yes">
+    <area fill="#F0E8CD" stroke="#A7B9AC" stroke-width="0.755" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="natural" v="water" zoom-min="0" closed="yes">
+    <area fill="#AAD7EC" cat="water" />
+  </rule>
+  <rule e="way" k="landuse" v="reservoir|basin|salt_pond|aquaculture" zoom-min="10" closed="yes">
+    <area fill="#AAD7EC" cat="water" />
+  </rule>
+  <rule e="way" k="waterway" v="riverbank" zoom-min="10" closed="yes">
+    <area fill="#AAD7EC" cat="water" />
+  </rule>
+  <rule e="way" k="railway" v="platform" zoom-min="16" closed="yes">
+    <area fill="#D6D6D6" stroke="#A7B9AC" stroke-width="0.755" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="man_made" v="pier|breakwater|groyne" zoom-min="13" closed="yes">
+    <area fill="#FFFFFF" stroke="#A7B9AC" stroke-width="0.755" scale="none" cat="landuse" />
+  </rule>
+  <rule e="way" k="man_made" v="pier|breakwater|groyne" closed="no" zoom-min="13">
+    <line stroke="#475569" stroke-width="1.3417" cat="landuse" />
+  </rule>
+  <rule e="way" k="waterway" v="river" zoom-min="10" closed="no">
+    <line stroke="#76BCE0" stroke-width="2.264" scale="none" cat="water" />
+  </rule>
+  <rule e="way" k="waterway" v="canal" zoom-min="12" closed="no">
+    <line stroke="#76BCE0" stroke-width="1.66" scale="none" cat="water" />
+  </rule>
+  <rule e="way" k="waterway" v="stream" zoom-min="14" closed="no">
+    <line stroke="#76BCE0" stroke-width="1.057" scale="none" cat="water" />
+  </rule>
+  <rule e="way" k="waterway" v="drain|ditch" zoom-min="15" closed="no">
+    <line stroke="#76BCE0" stroke-width="0.906" scale="none" cat="water" />
+  </rule>
+  <rule e="way" k="building" v="*" zoom-min="15">
+    <area fill="#DDD6CF" stroke="#C1B9B0" stroke-width="0.755" scale="none" cat="building" />
+  </rule>
+  <rule e="way" k="qd_boundary" v="town" zoom-min="12">
+    <line stroke="#A78BBA" stroke-width="0.906" stroke-dasharray="4.528,2.264,1.509,2.264" stroke-linecap="butt" scale="none" cat="boundary" />
+  </rule>
+  <rule e="way" k="qd_boundary" v="district" zoom-min="8">
+    <line stroke="#A78BBA" stroke-width="1.66" stroke-dasharray="7.547,3.774" stroke-linecap="butt" scale="none" cat="boundary" />
+  </rule>
+  <rule e="way" k="qd_boundary" v="city">
+    <line stroke="#A78BBA" stroke-width="2.415" stroke-dasharray="10.566,3.019,2.264,3.019" stroke-linecap="butt" scale="none" cat="boundary" />
+  </rule>
+  <rule e="way" k="area" v="~|no|false">
+    <rule e="way" k="tunnel" v="yes">
+      <rule e="way" k="highway" v="service">
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="0.1789" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="0.8307" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.5731" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="0.7983" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.5922" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="0.7768" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.6119" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="0.7642" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.6323" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="pedestrian">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D1CCC3" stroke-width="0.4294" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="1.1382" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.7625" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="1.0885" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.788" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="1.0547" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.8142" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="1.0337" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.8414" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="1.0233" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.8694" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="unclassified|residential|road|living_street">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D1CCC3" stroke-width="0.483" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D1CCC3" stroke-width="1.2746" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.805" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="1.2075" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.8319" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="1.1601" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.8596" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="1.1287" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.8882" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="1.1102" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.9179" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="1.1023" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFFFFF" stroke-width="0.9485" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#DC7778" stroke-width="0.6038" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#DC7778" stroke-width="0.5635" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#DC7778" stroke-width="1.3417" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="0.805" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#DC7778" stroke-width="1.2612" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="0.8319" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#DC7778" stroke-width="1.2031" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="0.8596" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#DC7778" stroke-width="1.163" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="0.8882" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#DC7778" stroke-width="1.1377" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="0.9179" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#DC7778" stroke-width="1.1243" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="0.9485" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="tertiary">
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#B8A56E" stroke-width="0.7849" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#B8A56E" stroke-width="0.7245" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#B8A56E" stroke-width="1.6101" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFF0B3" stroke-width="1.0063" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#B8A56E" stroke-width="1.5229" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFF0B3" stroke-width="1.0398" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#B8A56E" stroke-width="1.4609" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFF0B3" stroke-width="1.0745" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#B8A56E" stroke-width="1.4194" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFF0B3" stroke-width="1.1103" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#B8A56E" stroke-width="1.3946" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFF0B3" stroke-width="1.1473" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#B8A56E" stroke-width="1.3834" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#FFF0B3" stroke-width="1.1856" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="secondary">
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#C9A857" stroke-width="0.6038" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#C9A857" stroke-width="0.8453" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#C9A857" stroke-width="1.2075" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#C9A857" stroke-width="2.0072" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.1686" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#C9A857" stroke-width="1.8784" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.2075" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#C9A857" stroke-width="1.7845" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.2478" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#C9A857" stroke-width="1.7187" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.2894" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#C9A857" stroke-width="1.6759" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.3324" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#C9A857" stroke-width="1.6516" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.3768" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#C9A857" stroke-width="1.6425" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F9DA8C" stroke-width="1.4227" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="primary">
+        <rule e="way" k="*" v="*" zoom-min="9" zoom-max="9">
+          <line stroke="#D49A5C" stroke-width="0.6038" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#D49A5C" stroke-width="0.8453" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#D49A5C" stroke-width="1.0868" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#D49A5C" stroke-width="1.4491" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D49A5C" stroke-width="2.3696" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.3634" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D49A5C" stroke-width="2.2138" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.4088" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D49A5C" stroke-width="2.0998" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.4558" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D49A5C" stroke-width="2.0195" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.5043" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D49A5C" stroke-width="1.9666" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.5544" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D49A5C" stroke-width="1.936" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.6062" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D49A5C" stroke-width="1.9236" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.6598" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="trunk">
+        <rule e="way" k="*" v="*" zoom-min="7" zoom-max="7">
+          <line stroke="#D49A5C" stroke-width="0.7245" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="8" zoom-max="8">
+          <line stroke="#D49A5C" stroke-width="0.8453" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="9" zoom-max="9">
+          <line stroke="#D49A5C" stroke-width="1.0868" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#D49A5C" stroke-width="1.3283" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#D49A5C" stroke-width="1.5698" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#D49A5C" stroke-width="1.8113" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D49A5C" stroke-width="2.5834" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.4932" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D49A5C" stroke-width="2.4151" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.543" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D49A5C" stroke-width="2.2921" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.5944" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D49A5C" stroke-width="2.2057" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.6476" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D49A5C" stroke-width="2.149" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.7025" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D49A5C" stroke-width="2.1164" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.7592" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D49A5C" stroke-width="2.1036" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F5BF83" stroke-width="1.8179" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway">
+        <rule e="way" k="*" v="*" zoom-min="6" zoom-max="6">
+          <line stroke="#DC7778" stroke-width="0.8453" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="7" zoom-max="7">
+          <line stroke="#DC7778" stroke-width="0.966" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="8" zoom-max="8">
+          <line stroke="#DC7778" stroke-width="1.0868" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="9" zoom-max="9">
+          <line stroke="#DC7778" stroke-width="1.3283" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#DC7778" stroke-width="1.4491" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#DC7778" stroke-width="1.6906" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#DC7778" stroke-width="1.9321" stroke-dasharray="4.528,2.264" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#DC7778" stroke-width="2.7971" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.623" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#DC7778" stroke-width="2.6164" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.6771" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#DC7778" stroke-width="2.4844" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.7331" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#DC7778" stroke-width="2.3919" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.7908" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#DC7778" stroke-width="2.3314" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.8505" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#DC7778" stroke-width="2.2969" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.9122" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#DC7778" stroke-width="2.2837" stroke-dasharray="6.038,3.019" stroke-linecap="butt" cat="road" />
+          <line stroke="#F3A6A6" stroke-width="1.9759" cat="road" />
+        </rule>
+      </rule>
+    </rule>
+    <rule e="way" k="tunnel" v="~|no|false">
+      <rule e="way" k="bridge" v="yes">
+        <rule e="way" k="highway" v="service">
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#D1CCC3" stroke-width="1.2779" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#D1CCC3" stroke-width="1.0964" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#D1CCC3" stroke-width="0.9755" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#D1CCC3" stroke-width="0.8967" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="pedestrian">
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#D1CCC3" stroke-width="1.8091" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#D1CCC3" stroke-width="1.5357" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#D1CCC3" stroke-width="1.3528" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#D1CCC3" stroke-width="1.2325" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#D1CCC3" stroke-width="1.1558" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="unclassified|residential|road|living_street">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#D1CCC3" stroke-width="2.2809" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#D1CCC3" stroke-width="1.8784" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#D1CCC3" stroke-width="1.6074" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#D1CCC3" stroke-width="1.4268" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#D1CCC3" stroke-width="1.309" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#D1CCC3" stroke-width="1.2348" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#DC7778" stroke-width="2.348" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#DC7778" stroke-width="1.9321" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#DC7778" stroke-width="1.6503" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#DC7778" stroke-width="1.4612" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#DC7778" stroke-width="1.3365" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#DC7778" stroke-width="1.2568" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="tertiary">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#B8A56E" stroke-width="2.6164" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#B8A56E" stroke-width="2.1937" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#B8A56E" stroke-width="1.9081" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#B8A56E" stroke-width="1.7176" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#B8A56E" stroke-width="1.5934" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#B8A56E" stroke-width="1.5159" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="secondary">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#C9A857" stroke-width="2.8847" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#C9A857" stroke-width="2.4553" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#C9A857" stroke-width="2.166" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#C9A857" stroke-width="1.974" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#C9A857" stroke-width="1.8503" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#C9A857" stroke-width="1.775" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="primary">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#D49A5C" stroke-width="3.2201" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#D49A5C" stroke-width="2.7706" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#D49A5C" stroke-width="2.4668" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#D49A5C" stroke-width="2.2648" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#D49A5C" stroke-width="2.1348" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#D49A5C" stroke-width="2.0561" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="trunk">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#D49A5C" stroke-width="3.4214" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#D49A5C" stroke-width="2.963" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#D49A5C" stroke-width="2.653" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#D49A5C" stroke-width="2.4472" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#D49A5C" stroke-width="2.3152" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#D49A5C" stroke-width="2.2362" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+        <rule e="way" k="highway" v="motorway">
+          <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+            <line stroke="#DC7778" stroke-width="3.6226" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+            <line stroke="#DC7778" stroke-width="3.1553" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+            <line stroke="#DC7778" stroke-width="2.8392" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+            <line stroke="#DC7778" stroke-width="2.6295" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+            <line stroke="#DC7778" stroke-width="2.4957" stroke-linecap="butt" cat="road" />
+          </rule>
+          <rule e="way" k="*" v="*" zoom-min="19">
+            <line stroke="#DC7778" stroke-width="2.4162" stroke-linecap="butt" cat="road" />
+          </rule>
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="service">
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="0.2236" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="pedestrian">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D1CCC3" stroke-width="0.5367" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="unclassified|residential|road|living_street">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D1CCC3" stroke-width="0.6038" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#DC7778" stroke-width="0.7547" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#DC7778" stroke-width="0.7044" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="tertiary">
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#B8A56E" stroke-width="0.9811" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#B8A56E" stroke-width="0.9057" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="secondary">
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#C9A857" stroke-width="0.7547" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#C9A857" stroke-width="1.0566" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#C9A857" stroke-width="1.5094" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="primary">
+        <rule e="way" k="*" v="*" zoom-min="9" zoom-max="9">
+          <line stroke="#D49A5C" stroke-width="0.7547" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#D49A5C" stroke-width="1.0566" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#D49A5C" stroke-width="1.3585" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#D49A5C" stroke-width="1.8113" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="trunk">
+        <rule e="way" k="*" v="*" zoom-min="7" zoom-max="7">
+          <line stroke="#D49A5C" stroke-width="0.9057" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="8" zoom-max="8">
+          <line stroke="#D49A5C" stroke-width="1.0566" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="9" zoom-max="9">
+          <line stroke="#D49A5C" stroke-width="1.3585" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#D49A5C" stroke-width="1.6604" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#D49A5C" stroke-width="1.9623" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#D49A5C" stroke-width="2.2642" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway">
+        <rule e="way" k="*" v="*" zoom-min="6" zoom-max="6">
+          <line stroke="#DC7778" stroke-width="1.0566" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="7" zoom-max="7">
+          <line stroke="#DC7778" stroke-width="1.2075" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="8" zoom-max="8">
+          <line stroke="#DC7778" stroke-width="1.3585" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="9" zoom-max="9">
+          <line stroke="#DC7778" stroke-width="1.6604" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="10" zoom-max="10">
+          <line stroke="#DC7778" stroke-width="1.8113" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="11" zoom-max="11">
+          <line stroke="#DC7778" stroke-width="2.1132" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="12" zoom-max="12">
+          <line stroke="#DC7778" stroke-width="2.4151" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="service">
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="0.8307" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="0.7983" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="0.7768" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="0.7642" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="pedestrian">
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="1.1382" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="1.0885" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="1.0547" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="1.0337" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="1.0233" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="unclassified|residential|road|living_street">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D1CCC3" stroke-width="1.2746" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="1.2075" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="1.1601" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="1.1287" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="1.1102" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="1.1023" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#DC7778" stroke-width="1.3417" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#DC7778" stroke-width="1.2612" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#DC7778" stroke-width="1.2031" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#DC7778" stroke-width="1.163" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#DC7778" stroke-width="1.1377" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#DC7778" stroke-width="1.1243" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="tertiary">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#B8A56E" stroke-width="1.6101" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#B8A56E" stroke-width="1.5229" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#B8A56E" stroke-width="1.4609" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#B8A56E" stroke-width="1.4194" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#B8A56E" stroke-width="1.3946" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#B8A56E" stroke-width="1.3834" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="secondary">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#C9A857" stroke-width="2.0072" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#C9A857" stroke-width="1.8784" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#C9A857" stroke-width="1.7845" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#C9A857" stroke-width="1.7187" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#C9A857" stroke-width="1.6759" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#C9A857" stroke-width="1.6516" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#C9A857" stroke-width="1.6425" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="primary">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D49A5C" stroke-width="2.3696" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D49A5C" stroke-width="2.2138" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D49A5C" stroke-width="2.0998" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D49A5C" stroke-width="2.0195" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D49A5C" stroke-width="1.9666" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D49A5C" stroke-width="1.936" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D49A5C" stroke-width="1.9236" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="trunk">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D49A5C" stroke-width="2.5834" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D49A5C" stroke-width="2.4151" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D49A5C" stroke-width="2.2921" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D49A5C" stroke-width="2.2057" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D49A5C" stroke-width="2.149" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D49A5C" stroke-width="2.1164" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D49A5C" stroke-width="2.1036" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#DC7778" stroke-width="2.7971" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#DC7778" stroke-width="2.6164" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#DC7778" stroke-width="2.4844" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#DC7778" stroke-width="2.3919" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#DC7778" stroke-width="2.3314" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#DC7778" stroke-width="2.2969" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#DC7778" stroke-width="2.2837" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="service">
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#FFFFFF" stroke-width="0.5731" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#FFFFFF" stroke-width="0.5922" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#FFFFFF" stroke-width="0.6119" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#FFFFFF" stroke-width="0.6323" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="pedestrian">
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D1CCC3" stroke-width="0.7625" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D1CCC3" stroke-width="0.788" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D1CCC3" stroke-width="0.8142" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D1CCC3" stroke-width="0.8414" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D1CCC3" stroke-width="0.8694" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="unclassified|residential|road|living_street">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#FFFFFF" stroke-width="0.805" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#FFFFFF" stroke-width="0.8319" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#FFFFFF" stroke-width="0.8596" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#FFFFFF" stroke-width="0.8882" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#FFFFFF" stroke-width="0.9179" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#FFFFFF" stroke-width="0.9485" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#F3A6A6" stroke-width="0.805" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#F3A6A6" stroke-width="0.8319" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#F3A6A6" stroke-width="0.8596" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#F3A6A6" stroke-width="0.8882" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#F3A6A6" stroke-width="0.9179" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#F3A6A6" stroke-width="0.9485" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="tertiary">
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#FFF0B3" stroke-width="1.0063" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#FFF0B3" stroke-width="1.0398" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#FFF0B3" stroke-width="1.0745" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#FFF0B3" stroke-width="1.1103" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#FFF0B3" stroke-width="1.1473" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#FFF0B3" stroke-width="1.1856" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="secondary">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#F9DA8C" stroke-width="1.1686" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#F9DA8C" stroke-width="1.2075" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#F9DA8C" stroke-width="1.2478" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#F9DA8C" stroke-width="1.2894" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#F9DA8C" stroke-width="1.3324" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#F9DA8C" stroke-width="1.3768" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#F9DA8C" stroke-width="1.4227" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="primary">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#F5BF83" stroke-width="1.3634" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#F5BF83" stroke-width="1.4088" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#F5BF83" stroke-width="1.4558" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#F5BF83" stroke-width="1.5043" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#F5BF83" stroke-width="1.5544" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#F5BF83" stroke-width="1.6062" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#F5BF83" stroke-width="1.6598" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="trunk">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#D49A5C" stroke-width="1.4932" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#D49A5C" stroke-width="1.543" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#D49A5C" stroke-width="1.5944" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#D49A5C" stroke-width="1.6476" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#D49A5C" stroke-width="1.7025" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#D49A5C" stroke-width="1.7592" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#D49A5C" stroke-width="1.8179" cat="road" />
+        </rule>
+      </rule>
+      <rule e="way" k="highway" v="motorway">
+        <rule e="way" k="*" v="*" zoom-min="13" zoom-max="13">
+          <line stroke="#DC7778" stroke-width="1.623" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="14" zoom-max="14">
+          <line stroke="#DC7778" stroke-width="1.6771" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="15" zoom-max="15">
+          <line stroke="#DC7778" stroke-width="1.7331" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="16" zoom-max="16">
+          <line stroke="#DC7778" stroke-width="1.7908" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="17" zoom-max="17">
+          <line stroke="#DC7778" stroke-width="1.8505" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="18" zoom-max="18">
+          <line stroke="#DC7778" stroke-width="1.9122" cat="road" />
+        </rule>
+        <rule e="way" k="*" v="*" zoom-min="19">
+          <line stroke="#DC7778" stroke-width="1.9759" cat="road" />
+        </rule>
+      </rule>
+    </rule>
+    <rule e="way" k="highway" v="construction" zoom-min="14">
+      <line stroke="#D1CCC3" stroke-width="1.811" stroke-dasharray="4.528,3.019" stroke-linecap="butt" scale="none" cat="road" />
+    </rule>
+    <rule e="way" k="highway" v="track" zoom-min="15">
+      <line stroke="#B39570" stroke-width="1.208" stroke-dasharray="6.038,2.264" stroke-linecap="butt" scale="none" cat="path" />
+    </rule>
+    <rule e="way" k="highway" v="footway|path|cycleway|bridleway" zoom-min="15">
+      <line stroke="#B39570" stroke-width="0.906" stroke-dasharray="3.019,2.264" stroke-linecap="butt" scale="none" cat="path" />
+    </rule>
+    <rule e="way" k="highway" v="steps" zoom-min="16">
+      <line stroke="#B39570" stroke-width="2.642" stroke-dasharray="1.132,1.132" stroke-linecap="butt" scale="none" cat="path" />
+    </rule>
+  </rule>
+  <rule e="way" k="railway" v="rail|narrow_gauge">
+    <rule e="way" k="tunnel" v="yes" zoom-min="12">
+      <line stroke="#64748B" stroke-width="1.208" stroke-dasharray="4.528,3.019" stroke-linecap="butt" scale="none" cat="rail" />
+    </rule>
+    <rule e="way" k="tunnel" v="~|no|false">
+      <rule e="way" k="*" v="*" zoom-max="12">
+        <line stroke="#64748B" stroke-width="1.057" scale="none" cat="rail" />
+      </rule>
+      <rule e="way" k="*" v="*" zoom-min="13">
+        <line stroke="#64748B" stroke-width="3.019" stroke-linecap="butt" scale="none" cat="rail" />
+        <line stroke="#64748B" stroke-width="1.509" stroke-dasharray="6.792,6.792" stroke-linecap="butt" scale="none" cat="rail" />
+      </rule>
+    </rule>
+  </rule>
+  <rule e="way" k="railway" v="subway|light_rail">
+    <rule e="way" k="*" v="*" zoom-max="14">
+      <line stroke="#64748B" stroke-width="1.962" stroke-dasharray="7.547,2.264" stroke-linecap="butt" scale="none" cat="rail" />
+    </rule>
+    <rule e="way" k="*" v="*" zoom-min="15">
+      <line stroke="#64748B" stroke-width="1.66" stroke-dasharray="7.547,2.264" stroke-linecap="butt" scale="none" cat="rail" />
+    </rule>
+  </rule>
+  <rule e="way" k="railway" v="tram">
+    <line stroke="#64748B" stroke-width="1.057" scale="none" cat="rail" />
+  </rule>
+  <rule e="way" k="route" v="ferry">
+    <line stroke="#2563EB" stroke-width="0.906" stroke-dasharray="3.019,6.038" stroke-linecap="butt" scale="none" cat="transport" />
+  </rule>
+  <rule e="way" k="aerialway" v="*">
+    <line stroke="#2563EB" stroke-width="1.057" stroke-dasharray="1.509,3.774" stroke-linecap="butt" scale="none" cat="transport" />
+  </rule>
+  <rule e="way" k="aeroway" v="runway">
+    <line stroke="#2563EB" stroke-width="3.3543" stroke-linecap="butt" cat="transport" />
+  </rule>
+  <rule e="way" k="aeroway" v="taxiway">
+    <line stroke="#2563EB" stroke-width="1.0063" cat="transport" />
+  </rule>
+  <rule e="node" k="qd_admin" v="city" zoom-min="6" zoom-max="10">
+    <caption k="name" font-size="22" font-style="bold" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="200" cat="placename" />
+  </rule>
+  <rule e="node" k="qd_admin" v="district" zoom-min="8" zoom-max="13">
+    <caption k="name" font-size="19" font-style="bold" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="190" cat="placename" />
+  </rule>
+  <rule e="node" k="qd_admin" v="town" zoom-min="11" zoom-max="15">
+    <caption k="name" font-size="15" font-style="bold" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="170" cat="placename" />
+  </rule>
+  <rule e="node" k="place" v="island" zoom-min="11" zoom-max="30">
+    <caption k="name" font-size="13" font-style="normal" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="120" cat="placename" />
+  </rule>
+  <rule e="node" k="place" v="suburb|quarter" zoom-min="13" zoom-max="16">
+    <caption k="name" font-size="13" font-style="bold" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="140" cat="placename" />
+  </rule>
+  <rule e="node" k="place" v="village" zoom-min="13" zoom-max="30">
+    <caption k="name" font-size="13" font-style="normal" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="130" cat="placename" />
+  </rule>
+  <rule e="node" k="place" v="hamlet|islet" zoom-min="14" zoom-max="30">
+    <caption k="name" font-size="12" font-style="normal" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="110" cat="placename" />
+  </rule>
+  <rule e="node" k="place" v="neighbourhood|locality|square" zoom-min="15" zoom-max="30">
+    <caption k="name" font-size="12" font-style="normal" fill="#334155" stroke="#FFFFFF" stroke-width="3.5" priority="100" cat="placename" />
+  </rule>
+  <rule e="node" k="poi" v="airport" zoom-min="10">
+    <symbol id="s_airport" src="symbols/airport.svg" symbol-width="22" priority="95" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="10">
+      <caption k="name" font-size="14" font-style="bold" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="95" symbol-id="s_airport" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="train" zoom-min="11">
+    <symbol id="s_train" src="symbols/train.svg" symbol-width="22" priority="92" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="11">
+      <caption k="name" font-size="14" font-style="bold" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="92" symbol-id="s_train" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="subway" zoom-min="13">
+    <symbol id="s_subway" src="symbols/subway.svg" symbol-width="18" priority="88" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="13">
+      <caption k="name" font-size="13" font-style="bold" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="88" symbol-id="s_subway" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="ferry" zoom-min="13">
+    <symbol id="s_ferry" src="symbols/ferry.svg" symbol-width="18" priority="80" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="13">
+      <caption k="name" font-size="13" font-style="bold" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="80" symbol-id="s_ferry" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="busstation" zoom-min="14">
+    <symbol id="s_busstation" src="symbols/busstation.svg" symbol-width="18" priority="75" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="14">
+      <caption k="name" font-size="13" font-style="bold" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="75" symbol-id="s_busstation" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="university" zoom-min="13">
+    <symbol id="s_university" src="symbols/university.svg" symbol-width="18" priority="74" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="13">
+      <caption k="name" font-size="13" font-style="bold" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="74" symbol-id="s_university" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="hospital" zoom-min="14">
+    <symbol id="s_hospital" src="symbols/hospital.svg" symbol-width="18" priority="76" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="14">
+      <caption k="name" font-size="13" font-style="bold" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="76" symbol-id="s_hospital" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="sight" zoom-min="14">
+    <symbol id="s_sight" src="symbols/sight.svg" symbol-width="18" priority="72" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="14">
+      <caption k="name" font-size="13" font-style="bold" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="72" symbol-id="s_sight" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="museum" zoom-min="14">
+    <symbol id="s_museum" src="symbols/museum.svg" symbol-width="18" priority="72" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="14">
+      <caption k="name" font-size="13" font-style="bold" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="72" symbol-id="s_museum" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="park" zoom-min="14">
+    <symbol id="s_park" src="symbols/park.svg" symbol-width="18" priority="66" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="14">
+      <caption k="name" font-size="13" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="66" symbol-id="s_park" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="mall" zoom-min="14">
+    <symbol id="s_mall" src="symbols/mall.svg" symbol-width="18" priority="66" cat="shop" />
+    <rule e="node" k="name" v="*" zoom-min="14">
+      <caption k="name" font-size="13" font-style="normal" fill="#7C3AED" stroke="#FFFFFF" stroke-width="3.0" priority="66" symbol-id="s_mall" position="right" cat="shopname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="peak" zoom-min="12">
+    <symbol id="s_peak" src="symbols/peak.svg" symbol-width="14" priority="60" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="12">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="60" symbol-id="s_peak" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="school" zoom-min="15">
+    <symbol id="s_school" src="symbols/school.svg" symbol-width="16" priority="56" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="56" symbol-id="s_school" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="gov" zoom-min="15">
+    <symbol id="s_gov" src="symbols/gov.svg" symbol-width="16" priority="55" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="55" symbol-id="s_gov" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="hotel" zoom-min="15">
+    <symbol id="s_hotel" src="symbols/hotel.svg" symbol-width="16" priority="54" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="54" symbol-id="s_hotel" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="market" zoom-min="15">
+    <symbol id="s_market" src="symbols/market.svg" symbol-width="16" priority="54" cat="shop" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#7C3AED" stroke="#FFFFFF" stroke-width="3.0" priority="54" symbol-id="s_market" position="right" cat="shopname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="culture" zoom-min="15">
+    <symbol id="s_culture" src="symbols/culture.svg" symbol-width="16" priority="54" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="54" symbol-id="s_culture" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="sport" zoom-min="15">
+    <symbol id="s_sport" src="symbols/sport.svg" symbol-width="16" priority="50" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="50" symbol-id="s_sport" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="worship" zoom-min="15">
+    <symbol id="s_worship" src="symbols/worship.svg" symbol-width="16" priority="50" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="50" symbol-id="s_worship" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="fuel" zoom-min="15">
+    <symbol id="s_fuel" src="symbols/fuel.svg" symbol-width="16" priority="48" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="15">
+      <caption k="name" font-size="12" font-style="normal" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="48" symbol-id="s_fuel" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="clinic" zoom-min="16">
+    <symbol id="s_clinic" src="symbols/clinic.svg" symbol-width="16" priority="46" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="46" symbol-id="s_clinic" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="pharmacy" zoom-min="16">
+    <symbol id="s_pharmacy" src="symbols/pharmacy.svg" symbol-width="16" priority="44" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="44" symbol-id="s_pharmacy" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="bank" zoom-min="16">
+    <symbol id="s_bank" src="symbols/bank.svg" symbol-width="16" priority="44" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="44" symbol-id="s_bank" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="post" zoom-min="16">
+    <symbol id="s_post" src="symbols/post.svg" symbol-width="16" priority="44" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="44" symbol-id="s_post" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="food" zoom-min="16">
+    <symbol id="s_food" src="symbols/food.svg" symbol-width="16" priority="42" cat="food" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#C2410C" stroke="#FFFFFF" stroke-width="3.0" priority="42" symbol-id="s_food" position="right" cat="foodname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="cafe" zoom-min="16">
+    <symbol id="s_cafe" src="symbols/cafe.svg" symbol-width="16" priority="40" cat="food" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#C2410C" stroke="#FFFFFF" stroke-width="3.0" priority="40" symbol-id="s_cafe" position="right" cat="foodname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="bar" zoom-min="16">
+    <symbol id="s_bar" src="symbols/bar.svg" symbol-width="16" priority="38" cat="food" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#C2410C" stroke="#FFFFFF" stroke-width="3.0" priority="38" symbol-id="s_bar" position="right" cat="foodname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="shop" zoom-min="16">
+    <symbol id="s_shop" src="symbols/shop.svg" symbol-width="15" priority="36" cat="shop" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#7C3AED" stroke="#FFFFFF" stroke-width="3.0" priority="36" symbol-id="s_shop" position="right" cat="shopname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="car" zoom-min="16">
+    <symbol id="s_car" src="symbols/car.svg" symbol-width="15" priority="34" cat="shop" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#7C3AED" stroke="#FFFFFF" stroke-width="3.0" priority="34" symbol-id="s_car" position="right" cat="shopname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="office" zoom-min="16">
+    <symbol id="s_office" src="symbols/office.svg" symbol-width="15" priority="34" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="16">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="34" symbol-id="s_office" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="building" zoom-min="16">
+    <symbol id="s_building" src="symbols/building.svg" symbol-width="10" priority="33" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="17">
+      <caption k="name" font-size="12" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="33" symbol-id="s_building" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="parking" zoom-min="16">
+    <symbol id="s_parking" src="symbols/parking.svg" symbol-width="15" priority="30" cat="transport" />
+    <rule e="node" k="name" v="*" zoom-min="17">
+      <caption k="name" font-size="11" font-style="normal" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="30" symbol-id="s_parking" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="toilets" zoom-min="16">
+    <symbol id="s_toilets" src="symbols/toilets.svg" symbol-width="15" priority="30" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="17">
+      <caption k="name" font-size="11" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="30" symbol-id="s_toilets" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="misc" zoom-min="16">
+    <symbol id="s_misc" src="symbols/misc.svg" symbol-width="12" priority="28" cat="poi" />
+    <rule e="node" k="name" v="*" zoom-min="17">
+      <caption k="name" font-size="11" font-style="normal" fill="#0F766E" stroke="#FFFFFF" stroke-width="3.0" priority="28" symbol-id="s_misc" position="right" cat="poiname" />
+    </rule>
+  </rule>
+  <rule e="node" k="poi" v="estate" zoom-min="15">
+    <caption k="name" font-size="12" font-style="italic" fill="#334155" stroke="#FFFFFF" stroke-width="3.0" priority="52" cat="placename" />
+  </rule>
+  <rule e="node" k="poi" v="water" zoom-min="13">
+    <caption k="name" font-size="13" font-style="italic" fill="#287EB0" stroke="#FFFFFF" stroke-width="3.0" priority="58" cat="watername" />
+  </rule>
+  <rule e="node" k="poi" v="junction" zoom-min="13">
+    <caption k="name" font-size="12" font-style="italic" fill="#394454" stroke="#FFFFFF" stroke-width="3.0" priority="60" cat="roadname" />
+  </rule>
+  <rule e="node" k="poi" v="subway_entrance" zoom-min="17">
+    <symbol id="s_se" src="symbols/subway_entrance.svg" symbol-width="13" priority="35" cat="transport" />
+    <caption k="ref" font-size="11" font-style="normal" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="35" symbol-id="s_se" position="right" cat="transportname" />
+  </rule>
+  <rule e="node" k="poi" v="busstop">
+    <rule e="node" k="*" v="*" zoom-min="16" zoom-max="16">
+      <symbol src="symbols/busstop.svg" symbol-width="12" priority="30" cat="transport" />
+    </rule>
+    <rule e="node" k="*" v="*" zoom-min="17">
+      <symbol id="s_bus" src="symbols/busstop.svg" symbol-width="14" priority="32" cat="transport" />
+      <caption k="name" font-size="11" font-style="normal" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3.0" priority="32" symbol-id="s_bus" position="right" cat="transportname" />
+    </rule>
+  </rule>
+  <rule e="node" k="highway" v="traffic_signals" zoom-min="17">
+    <symbol src="symbols/traffic_signals.svg" symbol-width="10" priority="5" cat="road" />
+  </rule>
+  <rule e="node" k="poi" v="addr" zoom-min="17">
+    <caption k="addr:housenumber" font-size="10" font-style="normal" fill="#78716C" stroke="#FFFFFF" stroke-width="2" priority="5" cat="addr" />
+  </rule>
+  <rule e="way" k="building" v="*" zoom-min="17">
+    <caption k="addr:housenumber" font-size="10" font-style="normal" fill="#78716C" stroke="#FFFFFF" stroke-width="2" priority="4" cat="addr" />
+  </rule>
+  <rule e="way" k="highway" v="motorway|trunk" zoom-min="11">
+    <pathText k="name" font-size="13" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="3.5" priority="50" repeat="true" repeat-gap="160" cat="roadname" />
+  </rule>
+  <rule e="way" k="highway" v="primary" zoom-min="12">
+    <pathText k="name" font-size="13" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="3.5" priority="48" repeat="true" repeat-gap="160" cat="roadname" />
+  </rule>
+  <rule e="way" k="highway" v="secondary" zoom-min="13">
+    <pathText k="name" font-size="13" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="3.5" priority="46" repeat="true" repeat-gap="160" cat="roadname" />
+  </rule>
+  <rule e="way" k="highway" v="tertiary" zoom-min="14">
+    <pathText k="name" font-size="12" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="3.5" priority="44" repeat="true" repeat-gap="160" cat="roadname" />
+  </rule>
+  <rule e="way" k="highway" v="unclassified|residential|living_street|road|pedestrian" zoom-min="15">
+    <pathText k="name" font-size="12" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="3.5" priority="40" repeat="true" repeat-gap="160" cat="roadname" />
+  </rule>
+  <rule e="way" k="highway" v="motorway_link|trunk_link|primary_link|secondary_link|tertiary_link" zoom-min="16">
+    <pathText k="name" font-size="11" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="3.5" priority="34" repeat="true" repeat-gap="160" cat="roadname" />
+  </rule>
+  <rule e="way" k="highway" v="service|track|footway|path|steps|cycleway" zoom-min="16">
+    <pathText k="name" font-size="11" font-style="bold" fill="#766A54" stroke="#FFFFFF" stroke-width="3.5" priority="30" repeat="true" repeat-gap="160" cat="pathname" />
+  </rule>
+  <rule e="way" k="highway" v="motorway|trunk" zoom-min="10">
+    <rule e="way" k="ref" v="*">
+      <pathText k="ref" font-size="12" font-style="bold" fill="#394454" stroke="#FFFFFF" stroke-width="4" priority="52" repeat="true" repeat-gap="220" cat="roadname" />
+    </rule>
+  </rule>
+  <rule e="way" k="waterway" v="river|canal|stream" zoom-min="13">
+    <pathText k="name" font-size="12" font-style="italic" fill="#287EB0" stroke="#FFFFFF" stroke-width="3" priority="20" cat="watername" />
+  </rule>
+  <rule e="way" k="railway" v="rail|subway|light_rail" zoom-min="14">
+    <pathText k="name" font-size="11" fill="#475569" stroke="#FFFFFF" stroke-width="3" priority="15" cat="railname" />
+  </rule>
+  <rule e="way" k="route" v="ferry" zoom-min="13">
+    <pathText k="name" font-size="11" font-style="italic" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="3" priority="15" cat="transportname" />
+  </rule>
+  <rule e="way" k="oneway" v="yes" zoom-min="16">
+    <rule e="way" k="highway" v="*">
+      <lineSymbol src="symbols/oneway.svg" symbol-width="10" repeat="true" repeat-gap="120" display="always" priority="-50" cat="road" />
+    </rule>
+  </rule>
+</rendertheme>
